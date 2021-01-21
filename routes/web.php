@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// =================delete code start==========
+
+
+// =================delete code start==========
+
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -25,10 +30,11 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('permission', 'PermissionController');
 
+    // Route::get('/profile', 'UserController@profile')->name('user.profile');
+    Route::get('/profile',[UserController::class, 'profile'])->name('user.profile');
 
-    Route::get('/profile', 'UserController@profile')->name('user.profile');
-
-    Route::post('/profile', 'UserController@postProfile')->name('user.postProfile');
+    // Route::post('/profile', 'UserController@postProfile')->name('user.postProfile');
+    Route::post('/profile',[UserController::class, 'postProfile'])->name('user.postProfile');
 
     Route::get('/password/change', 'UserController@getPassword')->name('userGetPassword');
 

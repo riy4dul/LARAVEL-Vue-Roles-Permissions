@@ -117,7 +117,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                           {{-- <a href="{{ route('user.profile') }}" class="nav-link"> --}}
+                            <a href="{{ route('user.profile') }}" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Profile
