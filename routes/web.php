@@ -36,9 +36,11 @@ Route::group(['middleware' => 'auth'], function() {
     // Route::post('/profile', 'UserController@postProfile')->name('user.postProfile');
     Route::post('/profile',[UserController::class, 'postProfile'])->name('user.postProfile');
 
-    Route::get('/password/change', 'UserController@getPassword')->name('userGetPassword');
+    // Route::get('/password/change', 'UserController@getPassword')->name('userGetPassword');
+    Route::get('/password/change',[UserController::class, 'getPassword'])->name('userGetPassword');
 
-    Route::post('/password/change', 'UserController@postPassword')->name('userPostPassword');
+    // Route::post('/password/change', 'UserController@postPassword')->name('userPostPassword');
+    Route::post('/password/change',[UserController::class, 'postPassword'])->name('userPostPassword');
 });
 
 
