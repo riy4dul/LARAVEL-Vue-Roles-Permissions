@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PermissionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('user', 'UserController');
 
-    Route::resource('permission', 'PermissionController');
+    Route::resource('permission', PermissionController::class);
+    // Route::get('/permission',[PermissionController::class]);
 
     // Route::get('/profile', 'UserController@profile')->name('user.profile');
     Route::get('/profile',[UserController::class, 'profile'])->name('user.profile');
