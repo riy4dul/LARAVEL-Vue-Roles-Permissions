@@ -11,18 +11,25 @@
     },
     "devDependencies": {
         "axios": "^0.21",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^4.6.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
-        "postcss": "^8.1.14",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "vue-loader": "^15.9.6",
+        "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.2",
-        "admin-lte": "^3.1.0-rc"
+        "admin-lte": "^3.1.0-rc",
+        "autoprefixer": "^10.2.3",
+        "bootstrap-vue": "^2.21.2",
+        "postcss": "^8.2.4",
+        "sweetalert2": "^10.13.0",
+        "tailwindcss": "^2.0.2",
+        "vue": "^2.6.12"
     }
 }

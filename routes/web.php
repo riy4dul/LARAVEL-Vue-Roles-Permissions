@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,8 @@ Route::get('/', function () {
 });
 
 // =================delete code start==========
-
-
+Route::resource('role', RoleController::class);
+// Route::get('/getAllPermissions', 'PermissionController@getAllPermission');
 // =================delete code start==========
 
 
@@ -48,7 +49,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::group(['middleware' => ['auth', 'role_or_permission:admin|create role|create permission']], function() {
 
-    Route::resource('role', 'RoleController');
+    // Route::resource('role', 'RoleController');
+    // Route::resource('role', RoleController::class);
 
 
 });
