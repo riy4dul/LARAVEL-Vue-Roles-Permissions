@@ -20,8 +20,11 @@ Route::get('/', function () {
 });
 
 // =================delete code start==========
-Route::resource('role', RoleController::class);
-// Route::get('/getAllPermissions', 'PermissionController@getAllPermission');
+Route::resource('role', 'RoleController');
+
+
+// Route::get('/getAllPermissions', 'PermissionController@getAllPermissions');
+// Route::get('getAllPermissions',[PermissionController::class, 'getAllPermissions']);
 // =================delete code start==========
 
 
@@ -30,8 +33,10 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('user', 'UserController');
 
-    Route::resource('permission', PermissionController::class);
+    // Route::resource('permission', PermissionController::class);
+    Route::resource('permission', 'PermissionController');
     // Route::get('/permission',[PermissionController::class]);
+    // Route::get('/getAllPermission', [PermissionController::class, 'getAllPermissions']);
 
     // Route::get('/profile', 'UserController@profile')->name('user.profile');
     Route::get('/profile',[UserController::class, 'profile'])->name('user.profile');
