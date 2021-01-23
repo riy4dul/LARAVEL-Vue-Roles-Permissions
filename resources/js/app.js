@@ -21,6 +21,10 @@ Vue.use(VueToastr, {
   defaultProgressBarValue: 0,
 });
 
+import moment from 'moment';
+Vue.filter("date", function(created){
+    return moment(created).format('MMMM Do YYYY, h:mm:ss a');
+})
 
  Vue.component('role', require('./components/role.vue').default);
  Vue.component('user', require('./components/user.vue').default);

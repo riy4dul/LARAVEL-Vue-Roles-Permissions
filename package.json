@@ -27,6 +27,7 @@
         "admin-lte": "^3.1.0-rc",
         "autoprefixer": "^10.2.3",
         "bootstrap-vue": "^2.21.2",
+        "moment": "^2.29.1",
         "postcss": "^8.2.4",
         "sweetalert2": "^10.13.0",
         "tailwindcss": "^2.0.2",
