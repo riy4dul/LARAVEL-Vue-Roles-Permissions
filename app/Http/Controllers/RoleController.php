@@ -57,12 +57,13 @@ class RoleController extends Controller
         return response()->json("Role Created", 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     public function getAll(){
+        $roles = $this->role->all();
+        return response()->json([
+            'roles' => $roles
+        ], 200);
+    }
+    
     public function show($id)
     {
         //

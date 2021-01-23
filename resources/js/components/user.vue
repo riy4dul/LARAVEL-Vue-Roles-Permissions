@@ -181,7 +181,7 @@ export default {
                 'password': '',
                 'email': '',
                 'permissions': [],
-                'role': 3,
+                'role': 1,
             })
         }
     },
