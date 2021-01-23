@@ -10,9 +10,9 @@
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item mr-1">
 
-                            
+                            <!-- <div v-if="$can('create user')"> -->
                                 <button class="btn btn-sm btn-primary" @click="createMode"><i class="fas fa-plus-circle"></i> Add New</button>
-                            
+                            <!-- </div> -->
                             
                         </li>
                         <li class="nav-item">
