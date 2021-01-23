@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function() {
-    
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('user', 'UserController');
@@ -40,15 +40,11 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 
-// Route::group(['middleware' => ['auth', 'role_or_permission:admin|create role|create permission']], function() {
+Route::group(['middleware' => ['auth', 'role_or_permission:admin|create role|create permission']], function() {
 
-//     Route::resource('role', 'RoleController');
-//     Route::resource('permission', 'PermissionController');
+    Route::resource('role', 'RoleController');
 
-//     // Route::resource('role', RoleController::class);
-
-
-// });
+});
 
 
 
