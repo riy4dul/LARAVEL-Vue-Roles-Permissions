@@ -12,6 +12,15 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+// import plugin
+import VueToastr from "vue-toastr";
+Vue.use(VueToastr, {
+  defaultTimeout: 3000,
+  defaultPosition: "toast-top-right",
+  defaultProgressBar: false,
+  defaultProgressBarValue: 0,
+});
+
 
  Vue.component('role', require('./components/role.vue').default);
  Vue.component('user', require('./components/user.vue').default);
