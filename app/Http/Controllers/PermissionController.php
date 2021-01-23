@@ -15,9 +15,8 @@ class PermissionController extends Controller
     public function __construct(Permission $permission)
     {
         $this->permission = $permission;
-        // $this->middleware(['auth', 'role_or_permission:admin|create role|create permission']);
-        $this->middleware("auth");
-
+        $this->middleware(['auth', 'role_or_permission:admin|create role|create permission']);
+        
     }
 
     public function index()
