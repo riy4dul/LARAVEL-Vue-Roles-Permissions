@@ -16,9 +16,7 @@ Vue.use(IconsPlugin)
  Vue.component('role', require('./components/role.vue').default);
 
 
-const app = new Vue({
-    el:"#app"
-});
+
 
 import Swal from 'sweetalert2'
 window.swal = Swal;
@@ -36,3 +34,11 @@ const Toast = Swal.mixin({
 
 window.toast = Toast;
 
+import { Form, HasError, AlertError } from 'vform'
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
+const app = new Vue({
+    el:"#app"
+});
