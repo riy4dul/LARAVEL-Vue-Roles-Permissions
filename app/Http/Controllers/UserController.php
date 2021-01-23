@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+        $this->middleware(['auth', 'role_or_permission:admin|create user']);
+
+    }
+
     public function index()
     {
         return view('user.index');

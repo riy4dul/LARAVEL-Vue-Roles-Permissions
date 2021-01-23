@@ -101,6 +101,8 @@
                                             <p>Roles</p>
                                         </a>
                                     </li>
+                                @endcan
+                                @can('create permission')
                                     <li class="nav-item">
                                         <a href="{{ route('permission.index') }}" class="nav-link">
                                             <i class="fas fa-bomb nav-icon"></i>

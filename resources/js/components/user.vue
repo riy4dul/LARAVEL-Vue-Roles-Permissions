@@ -9,7 +9,11 @@
                 <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item mr-1">
-                            <button class="btn btn-sm btn-primary" @click="createMode"><i class="fas fa-plus-circle"></i> Add New</button>
+
+                            
+                                <button class="btn btn-sm btn-primary" @click="createMode"><i class="fas fa-plus-circle"></i> Add New</button>
+                            
+                            
                         </li>
                         <li class="nav-item">
                             <div class="input-group mt-0 input-group-sm" style="width: 350px;">
@@ -43,7 +47,9 @@
                             <td>{{ user.email }}</td>
                             <td>
                                 <button class="btn btn-sm btn-info" @click="viewUser(user)"> <i class="fa fa-eye"></i> View</button>
+                               
                                 <button class="btn btn-sm btn-warning" @click="editUser(user)" > <i class="fa fa-edit"></i> Edit</button>
+                                
                                 <button class="btn btn-sm btn-danger" @click="deleteUser(user)"> <i class="fa fa-trash"></i> Delete </button>
                             </td>
                             <td>
@@ -186,6 +192,11 @@ export default {
         }
     },
     methods:{
+        $can(permissionName) {
+        axios.get('/getAllPermissions').then((response) =>{
+                this.permissions = response.data.permissions
+            });
+        },
         search(){
             this.loading = true;
             axios.get('/search/user?s='+this.searchWord).then((response) =>{
