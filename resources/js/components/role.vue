@@ -31,39 +31,50 @@
 
 <script>
 export default {
-	data(){
-		return{
-			dis:true,
-			permissions:[],
-			form: new Form ({
-				'name' : '',
-				'permission' : []
-			})
-		}
-	},
-
+    data(){
+        return{
+            dis: true,
+            permissions: [],
+            form: new Form({
+                'name' : '',
+                'permissions' : []
+            })
+        }
+    },
     methods:{
-    	getPermissions(){
-    		axios.get("http://127.0.0.1:8000/getAllPermission")
-    		.then((response)=>{
-    			this.permissions =response.data.permissions
-    		}).catch(()=>{
-    			swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
+        getPermissions(){
+            axios.get("/getAllPermission")
+            .then((response)=>{
+                this.permissions = response.data.permissions
+            }).catch(()=>{
+                swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
                 })
-    		});
-    	},
-    	createRole(){
-    		this.dis = false;
-    		alert("You Clicked me");
-    		this.dis = true;
-    	}
+            });
+        },
+        createRole(){
+            this.dis = false;
+            this.form.post("/postRole").then(()=>{
+                swal.fire({
+                    icon: 'success',
+                    title: 'Role Created',
+                    text: 'Your Role has been created',
+                })
+                window.location = "/role";
+            }).catch(()=>{
+                swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                });
+            });
+            this.dis=true;
+        }
     },
     created(){
-    	this.getPermissions();
+        this.getPermissions();
     }
 }
 </script>
-

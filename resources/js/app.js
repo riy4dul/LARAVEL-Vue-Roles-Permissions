@@ -2,8 +2,8 @@ require('./bootstrap');
 
 
 // window.Vue = require('vue');
-// import Vue from 'vue'
-import Vue from 'vue/dist/vue.js';
+import Vue from 'vue'
+// import Vue from 'vue/dist/vue.js';
 window.Fire = new Vue();
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
